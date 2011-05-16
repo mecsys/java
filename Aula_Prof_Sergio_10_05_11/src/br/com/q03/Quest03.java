@@ -1,3 +1,4 @@
+
 package br.com.q03;
 
 import java.util.Random;
@@ -8,7 +9,7 @@ public class Quest03 {
 
 	/**
 	 * @param args
-	 *  3) Crie um método (em C ou Java) que, dado como parametros um vetor e 
+	 *  3) Crie um mï¿½todo (em C ou Java) que, dado como parametros um vetor e 
 	 *  seu tamanho n, popular o vetor com numeros entre 1...n
 	 */
 	
@@ -16,16 +17,17 @@ public class Quest03 {
 				
 	public int[] popVetor(int n) {
 		
-		int vet[] = new int[n];		
+		int vet[] = new int[n];
+		vet[0] = 999;
 				
-		for (int i = 0; i < vet.length; i++) {
+		for (int i = 1; i < vet.length; i++) {				
 			vet[i] = (int) random.nextInt(n);
 		}
 		
-		for (int i = 0; i < n; i++) {
+		for (int i = 1; i < n; i++) {
 			System.out.println("Vetor indice " + i + " conteudo " + vet[i]);			
 			if(vet[i] > n)
-				JOptionPane.showMessageDialog(null, "Vetor " + i + " inicializado com valor acima de" + n, "Atenção!", JOptionPane.WARNING_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Vetor " + i + " inicializado com valor acima de" + n, "Atenï¿½ï¿½o!", JOptionPane.WARNING_MESSAGE);
 		}		
 		return vet;
 	}

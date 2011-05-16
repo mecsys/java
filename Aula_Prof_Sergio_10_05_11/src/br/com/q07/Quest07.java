@@ -4,10 +4,10 @@ public class Quest07 {
 
 	/**
 	 * @param args
-	 *  7) Faça um grafico mostrando média tempo x tamanho vetor para os dois algoritmos.
+	 *  7) Faï¿½a um grafico mostrando mï¿½dia tempo x tamanho vetor para os dois algoritmos.
 	 *     Discuta sobre o resultado encontrado.
 	 *     
-	 *     Pnviar por e-mail.
+	 *     enviar por e-mail.
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
