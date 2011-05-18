@@ -5,15 +5,12 @@ public class Quest04 {
 	/**
 	 * @param args
 	 * 
-	 * 4) Selecione um algoritmo de ordena��o com tempo de execu��o O(n�) e um com O(n log n).
+	 * 4) Selecione um algoritmo de ordenacao com tempo de execucao O(n�) e um com O(n log n).
 	 *    Implemente este algoritmo, em C ou Java.
 	 */
 	
 	private int[] A = {0, 5, 8, 3, 1, 15, 9, 12, 7, 6, 12, 4};
 	private int heap_size = this.A.length - 1;
-	private long startTime;
-	private long stopTime;
-	
 	
 	public void mostraVet() {
 		System.out.println("===========================================================");
@@ -29,8 +26,7 @@ public class Quest04 {
 		
 		temp = this.A[maior];
 		this.A[maior] = this.A[troca];
-		this.A[troca] = temp;
-		mostraVet();
+		this.A[troca] = temp;		
 	}
 	
 	public int pai(int i) {
@@ -70,14 +66,10 @@ public class Quest04 {
 	
 	public void buildMaxHeap(int[] A) {		
 		
-		System.out.println(heap_size);
-		
 		for (int i = ((this.A.length -1) / 2); i >= 1; i--) {
 			maxHeapify(this.A, i);
 		}
-		
-		System.out.println(heap_size);
-		
+				
 	}
 	
 	public void heapSort(int[] A) {
@@ -91,17 +83,15 @@ public class Quest04 {
 	}
 	
 	public void chamaHeapSort() {
-		//heapSort(this.A);
-		startTime = System.currentTimeMillis();
+		System.currentTimeMillis();
 		heapSort(this.A);
-		stopTime = System.currentTimeMillis();
+		System.currentTimeMillis();
 	}
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Quest04 q04 = new Quest04();		
 				
-		q04.mostraVet();
 		q04.chamaHeapSort();
 		q04.mostraVet();
 

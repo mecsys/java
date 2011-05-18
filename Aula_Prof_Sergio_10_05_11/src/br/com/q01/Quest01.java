@@ -19,6 +19,20 @@ public class Quest01 {
 	 * 			t => haste temporaria
 	 * 			f => haste final
 	 */	
+	
+	public Quest01() {
+		// TODO Auto-generated constructor stub
+		System.out.println("Quest01 Construtor VOID.");
+		this.hanoi(16, 1, 3, 2);
+		System.out.println("Quest01 Construtor VOID.");
+	}
+	
+	public Quest01(int n, int i, int f, int t) {
+		// TODO Auto-generated constructor stub
+		System.out.println("Quest01 Construtor parametrizado..");
+		this.hanoi(n, i, f, t);
+		System.out.println("Construtor parametrizado..");
+	}
 		
 	public void hanoi(int n, int i, int f, int t) {
 		if(n == 1)
@@ -37,8 +51,8 @@ public class Quest01 {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Quest01 q01 = new Quest01();
-		q01.hanoi(16, 1, 3, 2);
+		@SuppressWarnings("unused")
+		Quest01 q01 = new Quest01(16, 1, 3, 2);
 	}
 
 }

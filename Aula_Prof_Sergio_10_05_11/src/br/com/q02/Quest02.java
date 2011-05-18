@@ -2,7 +2,7 @@ package br.com.q02;
 
 import br.com.q02.Quest02;
 
-public class Quest02 {
+public class Quest02  {
 
 	/**
 	 * @param args
@@ -34,6 +34,20 @@ public class Quest02 {
 	
 	static int count = 0;
 	
+	public Quest02() {
+		// TODO Auto-generated constructor stub
+		System.out.println("Quest02 Construtor VOID.");
+		this.hanoi(10, 1, 3, 2);
+		System.out.println("Quest02 Construtor VOID.");
+	}
+	
+	public Quest02(int n, int i, int f, int t) {
+		// TODO Auto-generated constructor stub
+		System.out.println("Quest02 Construtor parametrizado..");
+		this.hanoi(n, i, f, t);
+		System.out.println("Quest02 Construtor parametrizado..");
+	}
+	
 	public void hanoi(int n, int i, int f, int t) {
 		if(n == 1)
 				move(n, i, f);			
@@ -53,8 +67,8 @@ public class Quest02 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println("\nExercicio Torre de Hanoi:\n");
-		Quest02 q01 = new Quest02();
-		q01.hanoi(10, 1, 3, 2);
+		@SuppressWarnings("unused")
+		Quest02 q01 = new Quest02(10, 1, 3, 2);		
 		System.out.println("Numeros de movimentos realizados: " + count);		
 	}
 

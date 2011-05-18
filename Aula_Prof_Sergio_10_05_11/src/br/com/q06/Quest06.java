@@ -1,5 +1,7 @@
 package br.com.q06;
 
+import javax.swing.JOptionPane;
+
 import br.com.q03.Quest03;
 
 public class Quest06 {
@@ -10,20 +12,25 @@ public class Quest06 {
 	 *     cada um dos dois mï¿½todos de ordenaï¿½ï¿½o para vetores de tamanhos:
 	 *     10, 100, 200, 500, 2000, 5000 e 10000.
 	 */ 
-	private int[] A;
-	private int[] result = new int[7];
+	private int[] A;	
+	private int vetSize;
 	private int heap_size;
 	private long startTime;
 	private long stopTime;
+	private static String message = "";
 	
 	
 	public void mostraVet() {
-		System.out.println("===========================================================");
+		System.out.printf("================================================================================\nA");
 		for (int i = 1; i < this.A.length; i++) {
-			System.out.printf("A[%2d] = %3d", i, this.A[i]);
-			System.out.println();
+			System.out.printf("[%2d] ", i);
+
 		}
-		System.out.println("===========================================================");
+		System.out.printf("\n");
+		for (int i = 1; i < this.A.length; i++) {
+			System.out.printf("%4d ", this.A[i]);
+		}
+		System.out.printf("\n");
 	}
 	
 	public void troca(int troca, int maior) {
@@ -31,8 +38,7 @@ public class Quest06 {
 		
 		temp = this.A[maior];
 		this.A[maior] = this.A[troca];
-		this.A[troca] = temp;
-		mostraVet();
+		this.A[troca] = temp;		
 	}
 	
 	public int pai(int i) {
@@ -71,15 +77,9 @@ public class Quest06 {
 	}
 	
 	public void buildMaxHeap(int[] A) {		
-		
-		System.out.println(heap_size);
-		
 		for (int i = ((this.A.length -1) / 2); i >= 1; i--) {
 			maxHeapify(this.A, i);
-		}
-		
-		System.out.println(heap_size);
-		
+		}		
 	}	
 	
 	public void heapSort(int[] A) {
@@ -95,50 +95,58 @@ public class Quest06 {
 	public void chamaHeapSort() {
 		//heapSort(this.A);
 		startTime = System.currentTimeMillis();
+		startTime = System.nanoTime();
 		heapSort(this.A);
 		stopTime = System.currentTimeMillis();
+		stopTime = System.nanoTime();
 	}
 	
 	public void tempOdernacao() {
-		System.out.println("Tempo de ordenaÃ§Ã£o: " + (stopTime - startTime) + " msecs."  );
+		
+		System.out.printf("Tempo de ordenacao para Vetor com %5d posicoes: %5d usecs.\n", this.vetSize, ((stopTime - startTime) / 1000));		
+		message += String.format("Tempo de ordenacao para Vetor com %05d posicoes: %06d usecs.\n", this.vetSize, ((stopTime - startTime) / 1000));
 	}
 	
-	public void initA(int n) {
+	public void setA(int n) {
 		Quest03 q03 = new Quest03();
-		this.A = q03.popVetor(n + 1);
+		this.A = q03.getVetor(n + 1);
 		this.heap_size = this.A.length - 1;
+		this.vetSize = n;
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Quest06 q06 = new Quest06();		
-				
-		q06.initA(10);		
+						
+		q06.setA(10);		
 		q06.chamaHeapSort();		
 		q06.tempOdernacao();
 		
-		q06.initA(100);		
+		q06.setA(100);		
 		q06.chamaHeapSort();		
 		q06.tempOdernacao();
 
-		q06.initA(200);		
+		q06.setA(200);		
 		q06.chamaHeapSort();		
 		q06.tempOdernacao();
 		
-		q06.initA(500);		
+		q06.setA(500);		
 		q06.chamaHeapSort();		
 		q06.tempOdernacao();
 		
-		q06.initA(2000);		
+		q06.setA(2000);		
 		q06.chamaHeapSort();		
 		q06.tempOdernacao();
 		
-		q06.initA(5000);		
+		q06.setA(5000);		
 		q06.chamaHeapSort();		
 		q06.tempOdernacao();
 		
-		q06.initA(10000);		
+		q06.setA(10000);		
 		q06.chamaHeapSort();		
 		q06.tempOdernacao();
+		
+		JOptionPane.showMessageDialog(null, message, "Execução Finalizada!", JOptionPane.WARNING_MESSAGE );
+				
 	}
 
 }

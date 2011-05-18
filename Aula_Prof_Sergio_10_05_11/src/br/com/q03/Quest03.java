@@ -3,8 +3,6 @@ package br.com.q03;
 
 import java.util.Random;
 
-import javax.swing.JOptionPane;
-
 public class Quest03 {
 
 	/**
@@ -13,22 +11,17 @@ public class Quest03 {
 	 *  seu tamanho n, popular o vetor com numeros entre 1...n
 	 */
 	
-	Random random = new Random();
-				
-	public int[] popVetor(int n) {
+	private Random random = new Random();
+	
+	public int[] getVetor(int n) {
 		
 		int vet[] = new int[n];
 		vet[0] = 999;
 				
 		for (int i = 1; i < vet.length; i++) {				
 			vet[i] = (int) random.nextInt(n);
-		}
-		
-		for (int i = 1; i < n; i++) {
-			System.out.println("Vetor indice " + i + " conteudo " + vet[i]);			
-			if(vet[i] > n)
-				JOptionPane.showMessageDialog(null, "Vetor " + i + " inicializado com valor acima de" + n, "Aten��o!", JOptionPane.WARNING_MESSAGE);
 		}		
+		
 		return vet;
 	}
 	
@@ -37,9 +30,9 @@ public class Quest03 {
 		int[] aux;
 		
 		Quest03 q03 = new Quest03();
-		aux = q03.popVetor(100);
+		aux = q03.getVetor(100);
 		
-		System.out.println("Vetor inicializado com tamanho " + aux.length);
+		System.out.println("\nVetor inicializado com tamanho " + aux.length + " unidades.");
 	}
 
 }
