@@ -145,7 +145,7 @@ public class Quest06 {
 		q06.chamaHeapSort();		
 		q06.tempOdernacao();
 		
-		JOptionPane.showMessageDialog(null, message, "Execução Finalizada!", JOptionPane.WARNING_MESSAGE );
+		JOptionPane.showMessageDialog(null, message, "Execucao Finalizada!", JOptionPane.WARNING_MESSAGE );
 				
 	}
 
